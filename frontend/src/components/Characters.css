@@ -1,0 +1,108 @@
+.characters-section {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.character-card {
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.character-card:hover {
+  transform: translateY(-15px);
+}
+
+.character-image-wrapper {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.character-card:hover .character-image-wrapper {
+  border-color: rgba(255, 107, 107, 0.8);
+  box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+  transform: scale(1.05);
+}
+
+.character-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.character-card:hover .character-image {
+  transform: scale(1.1);
+}
+
+.character-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 107, 107, 0.3), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.character-card:hover .character-glow {
+  opacity: 1;
+}
+
+.character-info {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.character-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.character-anime {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.character-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .characters-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+  }
+
+  .character-image-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+}
+
