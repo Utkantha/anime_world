@@ -22,11 +22,16 @@ const Header = () => {
         </div>
         <nav className={`nav ${menuOpen ? 'open' : ''}`}>
           <a href="#trending">Trending</a>
+          <a href="#dramas">Dramas</a>
           <a href="#characters">Characters</a>
           <a href="#episodes">Episodes</a>
           <a href="#fanart">Fan Art</a>
           <a href="#blogs">Blogs</a>
           <a href="#reviews">Reviews</a>
+          <div className="nav-auth">
+            <a href="#auth" className="auth-btn login-btn">Log In</a>
+            <a href="#auth" className="auth-btn signup-btn">Sign Up</a>
+          </div>
         </nav>
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           <span></span>

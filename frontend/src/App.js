@@ -3,15 +3,18 @@ import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Trending from './components/Trending';
+import Dramas from './components/Dramas';
 import Characters from './components/Characters';
 import Episodes from './components/Episodes';
 import FanArt from './components/FanArt';
 import Blogs from './components/Blogs';
 import Reviews from './components/Reviews';
+import AuthSection from './components/AuthSection';
 import Footer from './components/Footer';
 
 function App() {
   const [trending, setTrending] = useState([]);
+  const [dramas, setDramas] = useState([]);
   const [characters, setCharacters] = useState([]);
   const [episodes, setEpisodes] = useState([]);
   const [fanArt, setFanArt] = useState([]);
@@ -24,8 +27,17 @@ function App() {
       try {
         const baseURL = 'http://localhost:5000/api';
         
-        const [trendingRes, charactersRes, episodesRes, fanArtRes, blogsRes, reviewsRes] = await Promise.all([
+        const [
+          trendingRes,
+          dramasRes,
+          charactersRes,
+          episodesRes,
+          fanArtRes,
+          blogsRes,
+          reviewsRes
+        ] = await Promise.all([
           fetch(`${baseURL}/trending`),
+          fetch(`${baseURL}/dramas`),
           fetch(`${baseURL}/characters`),
           fetch(`${baseURL}/episodes`),
           fetch(`${baseURL}/fanart`),
@@ -34,6 +46,7 @@ function App() {
         ]);
 
         setTrending(await trendingRes.json());
+        setDramas(await dramasRes.json());
         setCharacters(await charactersRes.json());
         setEpisodes(await episodesRes.json());
         setFanArt(await fanArtRes.json());
@@ -63,11 +76,13 @@ function App() {
       <Header />
       <Hero />
       <Trending data={trending} />
+      <Dramas data={dramas} />
       <Characters data={characters} />
       <Episodes data={episodes} />
       <FanArt data={fanArt} />
       <Blogs data={blogs} />
       <Reviews data={reviews} />
+      <AuthSection />
       <Footer />
     </div>
   );

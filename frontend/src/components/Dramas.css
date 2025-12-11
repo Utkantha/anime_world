@@ -1,0 +1,233 @@
+.dramas-section {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.dramas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.drama-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.drama-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  border-color: rgba(78, 205, 196, 0.7);
+}
+
+.drama-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+
+.drama-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.drama-card:hover .drama-image {
+  transform: scale(1.08);
+}
+
+.drama-overlay {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.drama-status {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.drama-rating {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+.drama-info {
+  padding: 20px;
+}
+
+.drama-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.drama-episodes {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+
+.drama-description {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .dramas-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dramas-section {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.dramas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 50px;
+}
+
+.drama-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.drama-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  border-color: rgba(78, 205, 196, 0.6);
+}
+
+.drama-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.drama-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.drama-card:hover .drama-image {
+  transform: scale(1.08);
+}
+
+.drama-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(90deg, #ff6b6b, #ee5a6f);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.35);
+}
+
+.drama-hover {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.drama-card:hover .drama-hover {
+  opacity: 1;
+}
+
+.drama-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #4ecdc4, #45b7d1);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.drama-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(69, 183, 209, 0.35);
+}
+
+.drama-info {
+  padding: 18px;
+}
+
+.drama-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.drama-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.drama-rating {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.drama-meta {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-bottom: 10px;
+}
+
+.drama-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.9;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .drama-image-wrapper {
+    height: 190px;
+  }
+}
+
